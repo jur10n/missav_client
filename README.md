@@ -46,3 +46,9 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 ## License
 
 [MIT](LICENSE)
+
+## 演示视频
+
+- 🎬 [App 功能演示（72 秒）](https://raw.githubusercontent.com/jur10n/missav_client/main/demo/missav-app-demo.mp4) — 无广告首页 / 视频播放页 / 收藏菜单 / 观看记录 / 设置中心，点击直接用浏览器播放
+- 🎬 [仓库页演示](https://raw.githubusercontent.com/jur10n/missav_client/main/demo/missav-client-demo.mp4)
+- 或从 [Releases](https://github.com/jur10n/missav_client/releases) 页面下载
