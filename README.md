@@ -1,6 +1,6 @@
 # MissAV Client
 
-第三方 MissAV 网页客户端（Flutter / Android）。基于 WebView 的轻量壳应用，内置广告拦截、双线路切换、账号收藏直达、全屏播放旋转等增强功能。
+第三方 MissAV 网页客户端（Flutter / Android + 浏览器扩展）。基于 WebView 的轻量壳应用，内置广告拦截、双线路切换、账号收藏直达、全屏播放旋转等增强功能；`extension/` 目录提供同款净化体验的 Chrome/Edge 浏览器扩展版。
 
 > **免责声明**：本项目仅供学习交流与技术研究所用，与 MissAV 官方无关；相关内容仅面向成年人，使用前请了解并遵守您所在地区的法律法规。请勿用于任何商业用途。
 
@@ -35,6 +35,14 @@ flutter build apk --release
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 ```
+
+## 浏览器扩展（web 端）
+
+安卓端同款净化的浏览器移植，见 [extension/README.md](extension/README.md)：
+
+- 广告域名网络层拦截（declarativeNetRequest，与安卓端同一份黑名单，`tools/gen_rules.py` 从 `lib/main.dart` 生成）
+- 弹窗横幅清扫 + popunder 根治 + 防切后台刷新 + 续播进度（六段 UserScript 原样移植）
+- Chrome 111+ / Edge，开发者模式直接加载，无需构建
 
 ## 技术要点
 

@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "MissAV Clean",
+  "version": "1.0.0",
+  "description": "MissAV 净化扩展：拦截广告域名、清扫弹窗横幅、根治 popunder、防切后台刷新、续播进度。安卓客户端同款体验的浏览器移植。",
+  "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["declarativeNetRequest", "storage"],
+  "host_permissions": [
+    "https://missav.ws/*",
+    "https://*.missav.ws/*",
+    "https://missav123.com/*",
+    "https://*.missav123.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ad_domains",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://missav.ws/*",
+        "https://*.missav.ws/*",
+        "https://missav123.com/*",
+        "https://*.missav123.com/*"
+      ],
+      "js": ["content/page-world.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://missav.ws/*",
+        "https://*.missav.ws/*",
+        "https://missav123.com/*",
+        "https://*.missav123.com/*"
+      ],
+      "js": ["content/clean.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "MissAV Clean",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  }
+}

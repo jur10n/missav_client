@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      width: 260px; margin: 0; padding: 14px 16px 12px;
+      background: #14161a; color: #e8eaed;
+      font: 13px/1.6 system-ui, "Microsoft YaHei", sans-serif;
+      user-select: none;
+    }
+    h1 { font-size: 14px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+    h1 .dot { width: 8px; height: 8px; border-radius: 50%; background: #e5446d; }
+    .row { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
+    .row input { accent-color: #e5446d; }
+    .sub { margin-left: 24px; color: #b8bcc4; }
+    .off #feats { opacity: .35; pointer-events: none; }
+    hr { border: 0; border-top: 1px solid #2a2e36; margin: 10px 0; }
+    .links { display: flex; gap: 14px; }
+    .links a { color: #7ab8ff; text-decoration: none; font-size: 12px; }
+    .links a:hover { text-decoration: underline; }
+    .status { margin-top: 8px; font-size: 11px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <h1><span class="dot"></span>MissAV Clean</h1>
+
+  <label class="row"><input type="checkbox" id="enabled"> 净化总开关</label>
+
+  <div id="feats">
+    <label class="row sub"><input type="checkbox" id="ad"> 广告拦截 + 清扫</label>
+    <label class="row sub"><input type="checkbox" id="prog"> 续播进度</label>
+  </div>
+
+  <hr>
+  <div class="links">
+    <a href="https://missav123.com" target="_blank">missav123.com</a>
+    <a href="https://missav.ws" target="_blank">missav.ws</a>
+  </div>
+  <div class="status">改动对已打开页面立即生效</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
